@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, table_view);
         listview.setAdapter(adapter);
 
+        hisbtn.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, MainActivity2.class));
+        });
 
         Gtablebtn.setOnClickListener(v->{
             String userInput = u_number.getText().toString().trim();
@@ -67,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 historyList.add(number);
             }
 
-
-
        });
+
+
 
 
 
